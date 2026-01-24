@@ -1,0 +1,54 @@
+{
+  "name": "reservo",
+  "version": "1.0.0",
+  "description": "Lightweight appointment management library for Node.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    },
+    "./transports/smtp": {
+      "types": "./dist/transports/smtp.d.ts",
+      "require": "./dist/transports/smtp.js",
+      "import": "./dist/transports/smtp.mjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "node --test --import tsx src/**/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "appointment",
+    "scheduling",
+    "booking",
+    "calendar",
+    "reservation"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "tsup": "^8.0.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.3.0"
+  },
+  "peerDependencies": {
+    "nodemailer": "^6.0.0"
+  },
+  "peerDependenciesMeta": {
+    "nodemailer": {
+      "optional": true
+    }
+  }
+}

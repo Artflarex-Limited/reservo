@@ -1,5 +1,7 @@
 # Reservo
 
+[![CI](https://github.com/Artflarex-Limited/reservo/actions/workflows/ci.yml/badge.svg)](https://github.com/Artflarex-Limited/reservo/actions/workflows/ci.yml)
+
 Lightweight appointment management for Node.js applications.
 
 Reservo is an infrastructure-level library for managing appointments programmatically. It handles appointment lifecycle, storage, and optional notifications—without imposing UI, authentication, or business logic.
@@ -23,6 +25,10 @@ await manager.confirmAppointment(appointment.id);
 ```bash
 npm install reservo
 ```
+
+## Requirements
+
+- Node.js >= 24.0.0
 
 ## Features
 
@@ -266,6 +272,18 @@ await manager.createAppointment({
   endsAt: 1705320000000,
 });
 ```
+
+## Development
+
+```bash
+npm ci
+npm test              # fast unit tests (node:test + tsx)
+npm run test:coverage # full suite with 100% statements/branches/functions/lines enforced via c8
+npm run typecheck
+npm run build
+```
+
+CI runs typecheck, coverage, and build on Node 24, 25, and 26 for every push and pull request.
 
 ## License
 

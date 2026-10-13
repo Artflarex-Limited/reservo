@@ -11,7 +11,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [18, 20, 22]
+        node-version: [24, 25, 26]
 
     steps:
       - name: Checkout
@@ -36,7 +36,7 @@ jobs:
         run: npm run build
 
       - name: Upload coverage report
-        if: matrix.node-version == 22
+        if: matrix.node-version == 26
         uses: actions/upload-artifact@v4
         with:
           name: coverage-lcov

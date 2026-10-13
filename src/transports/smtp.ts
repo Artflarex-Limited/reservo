@@ -62,7 +62,7 @@ export interface NodemailerTransporter {
  * @example
  * ```typescript
  * import nodemailer from 'nodemailer';
- * import { createSMTPTransport } from 'reservo/transports/smtp';
+ * import { createSMTPTransport } from '@artflarex-solutions/reservo/transports/smtp';
  *
  * const transporter = nodemailer.createTransport({ ... });
  *

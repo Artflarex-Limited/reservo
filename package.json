@@ -1,5 +1,5 @@
 {
-  "name": "reservo",
+  "name": "@artflarex-solutions/reservo",
   "version": "1.1.1",
   "description": "Lightweight appointment management library for Node.js",
   "main": "dist/index.js",
@@ -24,7 +24,7 @@
     "test": "node --test --import tsx \"src/**/*.test.ts\"",
     "test:coverage": "tsc -p tsconfig.coverage.json && c8 --all --src .cov --include \".cov/**/*.js\" --exclude \".cov/**/*.test.js\" --exclude \"**/types.ts\" --exclude \".cov/**/types.js\" --check-coverage --lines 100 --functions 100 --branches 100 --statements 100 --reporter=text --reporter=lcov node --test \".cov/**/*.test.js\"; code=$?; rm -rf .cov; exit $code",
     "typecheck": "tsc --noEmit",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
   },
   "keywords": [
     "appointment",
@@ -33,20 +33,31 @@
     "calendar",
     "reservation"
   ],
-  "author": "",
+  "author": "Artflarex <info@artflarex.com>",
   "license": "MIT",
+  "homepage": "https://github.com/Artflarex-Limited/reservo#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Artflarex-Limited/reservo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Artflarex-Limited/reservo/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "engines": {
     "node": ">=24.0.0"
   },
   "devDependencies": {
-    "@types/node": "^20.10.0",
+    "@types/node": "^24.0.0",
     "c8": "^12.0.0",
     "tsup": "^8.0.0",
     "tsx": "^4.21.0",
     "typescript": "^5.3.0"
   },
   "peerDependencies": {
-    "nodemailer": "^6.0.0"
+    "nodemailer": ">=6.0.0"
   },
   "peerDependenciesMeta": {
     "nodemailer": {

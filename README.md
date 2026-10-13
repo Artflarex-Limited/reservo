@@ -7,7 +7,7 @@ Lightweight appointment management for Node.js applications.
 Reservo is an infrastructure-level library for managing appointments programmatically. It handles appointment lifecycle, storage, and optional notifications—without imposing UI, authentication, or business logic.
 
 ```typescript
-import { createManager } from 'reservo';
+import { createManager } from '@artflarex-solutions/reservo';
 
 const manager = createManager();
 
@@ -23,7 +23,7 @@ await manager.confirmAppointment(appointment.id);
 ## Installation
 
 ```bash
-npm install reservo
+npm install @artflarex-solutions/reservo
 ```
 
 ## Requirements
@@ -45,7 +45,7 @@ npm install reservo
 ### Create and Manage Appointments
 
 ```typescript
-import { createManager } from 'reservo';
+import { createManager } from '@artflarex-solutions/reservo';
 
 const manager = createManager();
 
@@ -95,8 +95,8 @@ manager.on('appointment.rescheduled', (event) => {
 ### Add Email Notifications
 
 ```typescript
-import { createManager } from 'reservo';
-import { createSMTPTransport } from 'reservo/transports/smtp';
+import { createManager } from '@artflarex-solutions/reservo';
+import { createSMTPTransport } from '@artflarex-solutions/reservo/transports/smtp';
 import nodemailer from 'nodemailer';
 
 const transporter = nodemailer.createTransport({
@@ -195,7 +195,7 @@ interface Appointment {
 Implement the `StorageAdapter` interface for custom persistence:
 
 ```typescript
-import type { StorageAdapter, Appointment, AppointmentFilters } from 'reservo';
+import type { StorageAdapter, Appointment, AppointmentFilters } from '@artflarex-solutions/reservo';
 
 class PostgresStorage implements StorageAdapter {
   async create(appointment: Appointment): Promise<Appointment> {
@@ -227,7 +227,7 @@ const manager = createManager({ storage: new PostgresStorage() });
 Implement the `TransportAdapter` interface for custom notifications:
 
 ```typescript
-import type { TransportAdapter, AppointmentEvent } from 'reservo';
+import type { TransportAdapter, AppointmentEvent } from '@artflarex-solutions/reservo';
 
 const webhookTransport: TransportAdapter = {
   name: 'webhook',

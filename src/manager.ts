@@ -285,7 +285,7 @@ export class AppointmentManager {
  *
  * @example
  * ```typescript
- * import { createManager } from 'reservo';
+ * import { createManager } from '@artflarex-solutions/reservo';
  *
  * const manager = createManager();
  *
